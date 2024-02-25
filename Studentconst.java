@@ -1,0 +1,42 @@
+import java.util.*;
+class Studentconst{
+       private
+       String fullName;
+       int rollNum;
+       double semPercentage;
+       String collegeName;
+       int collegeCode;
+   public
+   Studentconst(){
+       System.out.println("default constructor");
+       collegeName="MVGR";
+       collegeCode=33;
+      System.out.println("college name is "+collegeName);
+       System.out.println("college code is "+collegeCode);
+   }
+   Studentconst(String name, double sem){
+       System.out.println("parameterized construct");
+       fullName=name;
+       semPercentage=sem;
+       System.out.println("full name is "+fullName);
+       System.out.println("sem percentage is "+semPercentage);
+   }
+   public void finalize(){
+       System.out.println("I'm dead");
+   }
+public static void main(String[] args){
+   String s;
+   double val;
+   System.out.println("enter the name : ");
+   Scanner input=new Scanner(System.in);
+   s=input.next();
+   System.out.println("enter the sem percentage : ");
+   val=input.nextDouble();
+   input.close();
+   Studentconst obj=new Studentconst();
+   Studentconst obj2=new Studentconst(s,val);
+   obj.finalize();
+   obj2.finalize();
+
+}
+}
